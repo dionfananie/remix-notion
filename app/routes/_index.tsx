@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { retrieveNotionDatabase } from "~/utils/notion.server";
+import About from "~/components/About";
+import Navigation from "~/components/Navigation";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,18 +9,19 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function loader() {
-  const pages = await retrieveNotionDatabase(process.env.NOTION_DB || "");
-  return { pages };
-}
+// export async function loader() {
+//   const pages = await retrieveNotionDatabase(process.env.NOTION_DB || "");
+//   return { pages };
+// }
 
 export default function Index() {
-  const { pages } = useLoaderData<typeof loader>();
-  console.log(pages);
+  // const { pages } = useLoaderData<typeof loader>();
+  // console.log(pages);
 
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">REMIX ON RENDER</div>
+    <div>
+      <Navigation />
+      <About />
     </div>
   );
 }
