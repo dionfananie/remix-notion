@@ -20,7 +20,7 @@ export default function Index() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16"></div>
+      <div className="flex flex-col items-center gap-16">REMIX ON RENDER</div>
     </div>
   );
 }
