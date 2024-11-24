@@ -36,7 +36,7 @@ const Navigation = () => {
               <li>
                 <Link
                   className="inline-block no-underline hover:text-black hover:underline py-2 px-4"
-                  to="#"
+                  to="/about"
                 >
                   About
                 </Link>
